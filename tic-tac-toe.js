@@ -57,4 +57,15 @@ document.querySelectorAll('.square').forEach(square => {
     document.getElementById('status').classList.remove('you-won');
     currentPlayer = 'X';
   });
+
+  document.querySelectorAll('.square').forEach(square => {
+    square.addEventListener('click', function() {
+      if (!this.textContent) {
+        this.textContent = currentPlayer;
+        this.classList.add(currentPlayer);
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        checkWinner();
+      }
+    });
+  });
   
