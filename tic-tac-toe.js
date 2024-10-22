@@ -14,4 +14,13 @@ document.querySelectorAll('.square').forEach(square => {
       }
     });
 });
+
+document.querySelectorAll('.square').forEach(square => {
+    square.addEventListener('mouseover', function() {
+      this.classList.add('hover');
+    });
+    square.addEventListener('mouseout', function() {
+      this.classList.remove('hover');
+    });
+  });
   
